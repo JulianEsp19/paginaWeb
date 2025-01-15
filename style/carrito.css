@@ -1,0 +1,165 @@
+/* Carrito Vacio */
+
+.carritoVacio {
+  width: 50%;
+  margin: auto;
+  text-align: center;
+}
+
+/* Carrito */
+.contenedorCarrito {
+  display: flex;
+  width: 90%;
+  height: max-content;
+  margin: 5rem auto;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  font-family: sans-serif;
+}
+
+.itemCarrito {
+  height: max-content;
+  margin: 1rem 0;
+  display: flex;
+}
+
+.itemCarrito > img {
+  width: 20%;
+  max-height: 12rem;
+  display: inline-block;
+  border-radius: 20px;
+}
+
+.informacionCarrito {
+  width: 60%;
+  height: inherit;
+  display: inline-block;
+  position: relative;
+}
+
+.informacionCarrito > p {
+  display: inline-block;
+}
+
+.infoProductoCarrito {
+  width: 80%;
+  margin-top: 1rem;
+  padding: 1rem;
+  height: inherit;
+  overflow: hidden;
+  text-align: justify;
+}
+
+.tituloCarrito {
+  width: 75%;
+  position: absolute;
+  left: 1rem;
+  top: -10px;
+  font-size: 2rem;
+  overflow: hidden;
+  white-space: pre;
+}
+
+.precioProductoCarrito {
+  height: inherit;
+  line-height: 7rem;
+  text-align: center;
+  justify-content: center;
+  position: absolute;
+  right: 10%;
+}
+
+.cantidadCarrito {
+  width: 15%;
+  display: inline-block;
+  position: relative;
+}
+
+.cantidadCarrito > p {
+  width: 100%;
+  margin: 15% 0;
+  text-align: center;
+  display: inherit;
+}
+
+.cantidadCarrito button {
+  display: inherit;
+  position: absolute;
+  bottom: 10px;
+  padding: 10px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.agregarCarrito {
+  left: 0;
+  background-color: yellow;
+}
+
+.submitCambiarCantidad {
+  left: 0;
+  background-color: greenyellow;
+}
+
+.eliminarCarrito {
+  right: 0;
+  background-color: red;
+  color: white;
+}
+
+.cancelarModificacion {
+  background-color: red;
+  color: white;
+  right: 0;
+}
+
+.cantidadInput {
+  width: 100%;
+  margin: 15% auto;
+  border: none;
+  border-radius: 20px;
+  padding: 0 10px;
+}
+
+/* Area de pedido */
+
+.areaPedido {
+  width: 80%;
+  margin: auto;
+  position: relative;
+}
+
+.areaPedido > h2 {
+  width: max-content;
+  display: inline-block;
+  margin-top: 0.5rem;
+}
+
+.areaPedido > form {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+/* Paypal container */
+
+#paypal {
+  width: 60%;
+  margin: auto;
+  margin-top: 40px;
+}
+
+.separador {
+  width: 48%;
+  height: 2px;
+  background-color: black;
+  display: inline-block;
+  border-radius: 3px;
+}
+
+#paypalRender {
+  width: 80%;
+  margin: auto;
+  margin-top: 40px;
+}

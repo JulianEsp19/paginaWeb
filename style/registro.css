@@ -1,0 +1,177 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.body{
+    background-image: url(../src/guitarras.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.form{
+    width: 100%;
+    height: 100vh;
+    backdrop-filter: blur(10px);
+    padding: 10%;
+}
+
+.cardRegistro{
+    width: 40%;
+    height: max-content;
+    margin: auto;
+    padding-bottom: 30px;
+    background-color: rgba(255, 255, 255, 0.5);
+    text-align: center;
+    border-radius: 40px;
+    padding-top: 20px;
+}
+
+/*campos del registro*/
+.campos{
+    width: 80%;
+    margin: 10px auto;
+    font-family: sans-serif;
+    text-align: left;
+}
+
+.campos>label{
+    display: block;
+    font-weight: 600;
+}
+
+.campos>p{
+    color: red;
+    margin-left: 10px;
+}
+
+.campos>input{
+    height: 40px;
+    font-size: 20px;
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 50px;
+    border: 1px solid black;
+    padding: 0 15px;
+}
+
+#descripcion{
+    width: 100%;
+    height: 10vh;
+    border-radius: 20px;
+    padding: 10px;
+    resize: none;
+}
+
+.camposInicio{
+    margin-top: 40px;
+}
+
+.cardRegistro>button{
+    background-color: var(--color-surface-tint);
+    color: var(--color-on-primary-container);
+    width: 70%;
+    height: 40px;
+    border-radius: 50px;
+    margin-top: 10px;
+    border: none;
+}
+
+/* boton de registro */
+.cardRegistro>button:hover, .custom-file-upload:hover{
+    background-color: var(--color-primary-container);
+    color: var(--color-on-primary-container);
+}
+
+
+/* Ingresar productos */
+.cardIngresarProducto{
+    margin-top: 0;
+    width: 90%;
+    text-align: center;
+}
+
+.camposIzquierda{
+    width: 50%;
+    display: inline-block;
+}
+
+.camposDerecha{
+    width: 30%;
+    position: absolute;
+    display: inline-block;
+}
+
+.contenedorCampos{
+    width: 100%;
+    text-align: left;
+}
+
+input[type="file"]{
+    display: none;
+}
+  
+.custom-file-upload {
+    margin-top: 10px;
+    display: inline-block;
+    padding: 6px 12px;
+    color: white;
+    border-radius: 50px;
+    cursor: pointer;
+    background-color: var(--color-surface-tint);
+    text-align: center;
+}
+
+#previsualizacionImagen{
+    width: 80%;
+    border-radius: 20px;
+    margin: 2rem;
+}
+
+
+/* editar productos admin */
+
+#regresar{
+    background-color: var(--color-primary-container);
+    color: white;
+    padding: 1rem;
+    display: inline-block;
+    border-radius: 50px;
+    text-decoration: none;
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+}
+
+.editarProducto{
+    backdrop-filter: none;
+    height: max-content;
+}
+
+
+/* Registro de nuevas imagenes */
+
+.imagenesDeProducto{
+    width: 50%;
+    margin: auto;
+    margin-bottom: 50px;
+}
+
+.imagenProductoContainer{
+    width: 100%;
+    position: relative;
+}
+
+.imagenProductoContainer>img{
+    width: 100%;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+.imagenFormsContainer{
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+}

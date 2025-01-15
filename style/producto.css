@@ -1,0 +1,88 @@
+.containerProducto{
+    width: 90%;
+    margin: 6rem auto;
+    display:flex;
+    justify-content: space-between;
+}
+
+.imagenesMuestra{
+    width: 5%;
+}
+
+.imagenesMuestra>div{
+    width: 100%;
+    height: 5vw;
+    border-radius: 10px;
+    background-color: white;
+    background-image: url("../src/productos/0amplificador.jpg");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-top: 5px;
+}
+
+.imagenesMuestra>div:hover{
+    filter: brightness(130%);
+    cursor: pointer;
+}
+
+.imagenPrincipal{
+    width: 50%;
+}
+
+.imagenPrincipal>img{
+    width: 100%;
+    border-radius: 20px;
+}
+
+.informacionPrincipal{
+    width: 30%;
+}
+
+#precioInformacion{
+    font-size: xx-large;
+    font-weight: 400;
+    margin-top: 60px;
+}
+
+#precioInformacion::before{
+    content: "$";
+}
+
+.botonAgregarCarrito{
+    width: 100%;
+    margin-top: 80px;
+}
+
+
+.containerInformacionPedido{
+    width: 90%;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.informacionPedido{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.informacionPedido>img{
+    width: 10%;
+    display: inline-block;
+}
+
+.informacionPedido>p{
+    display: inline-block;
+    position: relative;
+    bottom: 10px;
+}
+
+.descripcionProducto{
+    width: 80%;
+    margin: auto;
+}
+
+.descripcionProducto>p{
+    font-size: larger;
+    margin-top: 40px;
+}
