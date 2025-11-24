@@ -27,7 +27,7 @@ include "php/versiones.php"; ?>
     ?>
     <?php while ($row = pg_fetch_assoc($sql)) { ?>
       <article class="tarjeta">
-        <input class="getProducto" style="display: none;" type="text" value="<?php echo "?id=" . $row["idProducto"] . "&nombre=" . $row["nombre"] ?>">
+        <input class="getProducto" style="display: none;" type="text" value="<?php echo "?id=" . $row["idproducto"] . "&nombre=" . $row["nombre"] ?>">
         <img src="src/productos/<?php echo $row["imagenprincipal"] ?>" alt="">
         <div class="contenedor">
           <h1 class="tituloProducto"><?php echo $row["nombre"] ?></h1>
