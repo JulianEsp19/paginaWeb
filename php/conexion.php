@@ -1,14 +1,22 @@
 <?php
-$server = "dpg-d4iak9re5dus7385ktpg-a.oregon-postgres.render.com";
-$user = "web_data_base_23110304_user";
-$port = "5432";
+$host = "dpg-d4iak9re5dus7385ktpg-a.oregon-postgres.render.com";
 $db = "web_data_base_23110304";
+$user = "web_data_base_23110304_user";
 $passwd = "DLesf9WDIIwhw9Lan77mJBt0drjjw76h";
+$port = "5432";
 
-$con = pg_connect("host=$server port=$port dbname=$db user=$user password=$passwd sslmode=require");
+$connection_string = "
+    host=$host
+    port=$port
+    dbname=$db
+    user=$user
+    password=$passwd
+    sslmode=require
+    sslrootcert=/etc/ssl/certs/ca-certificates.crt
+";
 
-if($con){
-    // echo("Conexion exitosa");
-}else{
-    // echo("Conexion fallida");
+$con = pg_connect($connection_string);
+
+if (!$con) {
+    echo "Conexion fallida";
 }
