@@ -27,14 +27,14 @@ include "php/versiones.php"; ?>
     ?>
     <?php while ($row = pg_fetch_assoc($sql)) { ?>
       <article class="tarjeta">
-        <input class="getProducto" style="display: none;" type="text" value="<?php echo "?id=" . $row["IDProducto"] . "&nombre=" . $row["Nombre"] ?>">
-        <img src="src/productos/<?php echo $row["ImagenPrincipal"] ?>" alt="">
+        <input class="getProducto" style="display: none;" type="text" value="<?php echo "?id=" . $row["idProducto"] . "&nombre=" . $row["nombre"] ?>">
+        <img src="src/productos/<?php echo $row["imagenprincipal"] ?>" alt="">
         <div class="contenedor">
-          <h1 class="tituloProducto"><?php echo $row["Nombre"] ?></h1>
-          <p id="precio"><?php echo $row["Precio"] ?></p>
-          <p><?php echo $row["Descripcion"] ?></p>
+          <h1 class="tituloProducto"><?php echo $row["nombre"] ?></h1>
+          <p id="precio"><?php echo $row["precio"] ?></p>
+          <p><?php echo $row["descripcion"] ?></p>
           <form action="php/carrito.php" method="post">
-            <input style="display: none;" type="text" name="idProducto" value="<?php echo $row["IDProducto"] ?>">
+            <input style="display: none;" type="text" name="idProducto" value="<?php echo $row["idproducto"] ?>">
             <button type="submit">Agregar</button>
           </form>
         </div>
