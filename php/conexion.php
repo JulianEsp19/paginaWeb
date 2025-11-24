@@ -1,5 +1,5 @@
 <?php
-$server = "postgresql://web_data_base_23110304_user:DLesf9WDIIwhw9Lan77mJBt0drjjw76h@dpg-d4iak9re5dus7385ktpg-a/web_data_base_23110304";
+$server = "postgresql://web_data_base_23110304_user:DLesf9WDIIwhw9Lan77mJBt0drjjw76h@dpg-d4iak9re5dus7385ktpg-a.oregon-postgres.render.com/web_data_base_23110304";
 $user = "web_data_base_23110304_user";
 $port = "5432";
 $db = "web_data_base_23110304";
