@@ -5,7 +5,7 @@ $port = "5432";
 $db = "web_data_base_23110304";
 $passwd = "DLesf9WDIIwhw9Lan77mJBt0drjjw76h";
 
-$con = pg_connect("host=$server port=$port dbname=$db user=$user password=$passwd sslmode=require");
+$con = pg_connect("host=$server port=$port dbname=$db user=$user password=$passwd");
 
 if($con){
     // echo("Conexion exitosa");
