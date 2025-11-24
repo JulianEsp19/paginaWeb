@@ -1,10 +1,10 @@
 <?php
-$server = "127.0.0.1:3307";
-$user = "root";
-$db = "webdatabase";
-$passwd = "";
+$server = "dpg-d4iak9re5dus7385ktpg-a";
+$user = "web_data_base_23110304_user";
+$db = "web_data_base_23110304";
+$passwd = "DLesf9WDIIwhw9Lan77mJBt0drjjw76h";
 
-$con = mysqli_connect($server, $user, $passwd, $db);
+$con = pg_connect("host=$server dbname=$db user=$user password=$passwd");
 
 if($con){
     // echo("Conexion exitosa");
