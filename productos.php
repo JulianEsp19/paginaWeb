@@ -23,9 +23,9 @@ include "php/versiones.php"; ?>
   <div class="productosContainer">
 
     <?php
-    $sql = mysqli_query($con, "SELECT * FROM productos");
+    $sql = pg_query($con, "SELECT * FROM productos");
     ?>
-    <?php while ($row = mysqli_fetch_array($sql)) { ?>
+    <?php while ($row = pg_fetch_assoc($sql)) { ?>
       <article class="tarjeta">
         <input class="getProducto" style="display: none;" type="text" value="<?php echo "?id=" . $row["IDProducto"] . "&nombre=" . $row["Nombre"] ?>">
         <img src="src/productos/<?php echo $row["ImagenPrincipal"] ?>" alt="">
