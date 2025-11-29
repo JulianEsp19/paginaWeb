@@ -10,9 +10,3 @@ $port = "5432";
 $connection_string = "host=$host port=$port dbname=$db user=$user password=$passwd sslmode=require";
 
 $con = pg_connect($connection_string);
-
-if (!$con) {
-    echo "Conexion fallida";
-} else {
-    echo "Conexion exitosa";
-}

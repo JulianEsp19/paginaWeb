@@ -8,7 +8,6 @@ $contrasena =  $_POST['contrasena'];
 $sql = pg_query($con, "SELECT * FROM usuarios WHERE correo='$correo' AND contrasena='$contrasena'");
 
 if (pg_affected_rows($sql) != 0) {
-    echo ("sesion iniciada");
     iniciarSesion($sql);
     header("Location:../index.php");
 } else {
