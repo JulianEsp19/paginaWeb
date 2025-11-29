@@ -1,5 +1,7 @@
 <?php
+
 $host = "dpg-d4iak9re5dus7385ktpg-a";
+//$host = "dpg-d4iak9re5dus7385ktpg-a.oregon-postgres.render.com";
 $db = "web_data_base_23110304";
 $user = "web_data_base_23110304_user";
 $passwd = "DLesf9WDIIwhw9Lan77mJBt0drjjw76h";

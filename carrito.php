@@ -33,23 +33,28 @@ sleep(1)
 
         $consulta = pg_query(
             $con,
-            "SELECT productos.ImagenPrincipal, productos.Nombre, productos.Descripcion, productos.Precio, carrito.cantidad, carrito.IDProducto        FROM carrito 
+            "SELECT productos.imagenprincipal, productos.nombre, productos.descripcion, productos.precio, carrito.cantidad, carrito.idproducto FROM carrito 
         INNER JOIN productos 
-        ON productos.IDProducto = carrito.IDProducto 
-        WHERE carrito.IdUsuario = $idUsuario"
+        ON productos.idproducto = carrito.idproducto 
+        WHERE carrito.idusuario = $idUsuario"
         );
-
+//productos.imagenprincipal
+// productos.nombre
+// productos.descripcion
+// productos.precio
+// carrito.cantidad
+// carrito.idproducto
         while ($row = pg_fetch_assoc($consulta)) { ?>
             <div class="itemCarrito">
-                <img src="src/productos/<?php echo $row[0] ?>" alt="">
+                <img src="src/productos/<?php echo $row["imagenprincipal"] ?>" alt="">
                 <div class="informacionCarrito">
-                    <p class="tituloCarrito"><?php echo $row[1] ?></p>
-                    <p class="infoProductoCarrito"><?php echo $row[2] ?></p>
-                    <p class="precioProductoCarrito"><?php echo $row[3] ?></p>
+                    <p class="tituloCarrito"><?php echo $row["nombre"] ?></p>
+                    <p class="infoProductoCarrito"><?php echo $row["descripcion"] ?></p>
+                    <p class="precioProductoCarrito"><?php echo $row["precio"] ?></p>
                 </div>
                 <div class="cantidadCarrito">
-                    <p id="cantidadParrafo<?php echo $auxProductos ?>"><?php echo $row[4] ?></p>
-                    <input type="number" class="cantidadInput" id="cantidadInput<?php echo $auxProductos ?>" style="display:none;" value="<?php echo $row[4] ?>">
+                    <p id="cantidadParrafo<?php echo $auxProductos ?>"><?php echo $row["cantidad"] ?></p>
+                    <input type="number" class="cantidadInput" id="cantidadInput<?php echo $auxProductos ?>" style="display:none;" value="<?php echo $row["cantidad"] ?>">
                     <button class="agregarCarrito" id="agregarCarrito<?php echo $auxProductos ?>">agregar</button>
 
                     <form id="formCambiarCantidad<?php echo $auxProductos ?>" action="php/carrito.php" style="display: none;" method="post">
@@ -70,7 +75,7 @@ sleep(1)
             </div>
             <hr>
             <?php
-            $total += $row[3] * $row[4];
+            $total += $row["precio"] * $row["cantidad"];
             $auxProductos++;
             ?>
         <?php } ?>

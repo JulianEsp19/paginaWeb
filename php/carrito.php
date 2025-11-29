@@ -22,27 +22,27 @@ if(isset($_SESSION["datosSesion"]["IDUsuario"])){
 
 
 
-$sql = mysqli_query($con, 
+$sql = pg_query($con, 
 "SELECT * FROM carrito 
-    WHERE IdUsuario = $idUsuario 
-    AND IDProducto = $idProducto");
+    WHERE idusuario = $idUsuario 
+    AND idproducto = $idProducto");
 
-if(mysqli_num_rows($sql) == 0){
-    $agregarProducto = mysqli_query($con, 
-    "INSERT INTO carrito(IdUsuario, IDProducto, cantidad)
+if(pg_affected_rows($sql) == 0){
+    $agregarProducto = pg_query($con, 
+    "INSERT INTO carrito(idusuario, idproducto, cantidad)
     VALUES ($idUsuario, $idProducto, 1)");
 }else if(isset($cantidad)){
-    $cambiaProductoConCantidad = mysqli_query($con,
+    $cambiaProductoConCantidad = pg_query($con,
     "UPDATE carrito
     SET cantidad = $cantidad
-    WHERE IdUsuario = $idUsuario 
-    AND IDProducto = $idProducto");
+    WHERE idusuario = $idUsuario 
+    AND idproducto = $idProducto");
 }else{
     $cambiaProducto = mysqli_query($con,
     "UPDATE carrito
     SET cantidad = cantidad+1
-    WHERE IdUsuario = $idUsuario 
-    AND IDProducto = $idProducto");
+    WHERE idusuario = $idUsuario 
+    AND idproducto = $idProducto");
 }
 
 header('Location:' . getenv('HTTP_REFERER'));

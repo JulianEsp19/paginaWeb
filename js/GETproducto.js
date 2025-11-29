@@ -6,7 +6,7 @@ console.log(link)
 
 for(let i = 0; i<tarjeta.length; i++){
     tarjeta[i].addEventListener("click", ()=>{
-        window.location.href = '/paginaWeb/producto.php'+link[i].value;
+        window.location.href = 'producto.php'+link[i].value;
         console.log("click")
     })
 }
