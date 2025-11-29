@@ -1,9 +1,10 @@
 <?php
-function iniciarSesion(mysqli_result $result) {
+
+function iniciarSesion($result) {
     
     session_start();
 
-    $datos = mysqli_fetch_row($result);
+    $datos = pg_fetch_row($result);
 
     $_SESSION["datosSesion"]["IDUsuario"] = $datos[0];
     $_SESSION["datosSesion"]["Nombre"] = $datos[1];

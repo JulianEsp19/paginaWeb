@@ -31,7 +31,7 @@ sleep(1)
         $total = 0;
         $auxProductos = 0; //variable para la cuenta de los productos en carrito
 
-        $consulta = mysqli_query(
+        $consulta = pg_query(
             $con,
             "SELECT productos.ImagenPrincipal, productos.Nombre, productos.Descripcion, productos.Precio, carrito.cantidad, carrito.IDProducto        FROM carrito 
         INNER JOIN productos 
@@ -39,7 +39,7 @@ sleep(1)
         WHERE carrito.IdUsuario = $idUsuario"
         );
 
-        while ($row = mysqli_fetch_array($consulta)) { ?>
+        while ($row = pg_fetch_assoc($consulta)) { ?>
             <div class="itemCarrito">
                 <img src="src/productos/<?php echo $row[0] ?>" alt="">
                 <div class="informacionCarrito">
@@ -54,14 +54,14 @@ sleep(1)
 
                     <form id="formCambiarCantidad<?php echo $auxProductos ?>" action="php/carrito.php" style="display: none;" method="post">
 
-                        <input style="display: none;" type="text" name="idProducto" value="<?php echo $row["IDProducto"] ?>">
+                        <input style="display: none;" type="text" name="idProducto" value="<?php echo $row["idproducto"] ?>">
                         <input id="cantidadForm<?php echo $auxProductos ?>" style="display: none;" type="number" name="cantidad">
 
                         <button class="boton submitCambiarCantidad" id="submitCambiarCantidad<?php echo $auxProductos ?>" type="submit">Aceptar</button>
                     </form>
 
                     <form id="formEliminarProducto<?php echo $auxProductos ?>" action="php/eliminarProductoCarrito.php" method="post">
-                        <input style="display: none;" type="text" name="idProducto" value="<?php echo $row["IDProducto"] ?>">
+                        <input style="display: none;" type="text" name="idProducto" value="<?php echo $row["idproducto"] ?>">
                         <button id="eliminarCarrito<?php echo $auxProductos ?>" class="eliminarCarrito boton" id="submitEliminarCantidad" type="submit">Eliminar</button>
                     </form>
 

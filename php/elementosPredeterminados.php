@@ -36,7 +36,7 @@ function barraPredeterminada()
 
       $id = $_SESSION['datosSesion']["IDUsuario"];
 
-      $consulta = mysqli_query(
+      $consulta = pg_query(
         $con,
         "SELECT carrito.IDProducto FROM carrito 
         WHERE carrito.IdUsuario = $id"
@@ -44,7 +44,7 @@ function barraPredeterminada()
 
       $cantidadProductos = 0;
 
-      while($row = mysqli_fetch_array($consulta)){
+      while($row = pg_fetch_assoc($consulta)){
         $cantidadProductos++;
       }
 

@@ -19,10 +19,10 @@ include "php/conexion.php"; ?>
     $id = $_GET["id"];
     $nombre = $_GET["nombre"];
 
-    $consultaProductos = mysqli_query($con, "SELECT * FROM productos WHERE IDProducto = $id");
-    $consultaImagenes = mysqli_query($con, "SELECT ruta FROM imagenesProductos WHERE IDProducto = $id");
+    $consultaProductos = pg_query($con, "SELECT * FROM productos WHERE IDProducto = $id");
+    $consultaImagenes = pg_query($con, "SELECT ruta FROM imagenesProductos WHERE IDProducto = $id");
 
-    $arregloConsulta = mysqli_fetch_array($consultaProductos);
+    $arregloConsulta = pg_fetch_array($consultaProductos);
     ?>
 
     <!-- Barra de navegacion -->
@@ -31,20 +31,20 @@ include "php/conexion.php"; ?>
     ?>
     <div class="containerProducto">
         <div class="imagenesMuestra">
-            <div class="imagenes" style="background-image: url('src/productos/<?php echo $arregloConsulta["ImagenPrincipal"]?>')"></div>
-            <?php while($row = mysqli_fetch_array($consultaImagenes)){ ?>
+            <div class="imagenes" style="background-image: url('src/productos/<?php echo $arregloConsulta["imagenprincipal"]?>')"></div>
+            <?php while($row = pg_fetch_array($consultaImagenes)){ ?>
                 <div class="imagenes" style="background-image: url('src/productos/<?php echo $row['ruta'] ?>"></div>
             <?php } ?>
         </div>
         <div class="imagenPrincipal">
-            <img id="imagenVista" src="src/productos/<?php echo $arregloConsulta["ImagenPrincipal"] ?>" alt="">
+            <img id="imagenVista" src="src/productos/<?php echo $arregloConsulta["imagenprincipal"] ?>" alt="">
         </div>
         <div class="informacionPrincipal">
             <h1><?php echo $nombre ?></h1>
-            <p id="precioInformacion"><?php echo $arregloConsulta['Precio'] ?></p>
+            <p id="precioInformacion"><?php echo $arregloConsulta['precio'] ?></p>
 
             <form action="php/carrito.php" method="post">
-                <input style="display: none;" type="text" name="idProducto" value="<?php echo $arregloConsulta["IDProducto"] ?>">
+                <input style="display: none;" type="text" name="idProducto" value="<?php echo $arregloConsulta["idproducto"] ?>">
                 <button class="boton botonAgregarCarrito" type="submit">Agregar al carrito</button>
             </form>
 
@@ -67,7 +67,7 @@ include "php/conexion.php"; ?>
 
     <div class="descripcionProducto">
         <h2>Descripcion</h2>
-        <p><?php echo $arregloConsulta["Descripcion"] ?></p>
+        <p><?php echo $arregloConsulta["descripcion"] ?></p>
     </div>
 
     <div class="descripcion"></div>

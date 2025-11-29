@@ -5,9 +5,9 @@ include 'sesiones.php';
 $correo = $_POST['correo'];
 $contrasena =  $_POST['contrasena'];
 
-$sql = mysqli_query($con, "SELECT * FROM usuarios WHERE Correo='$correo' AND Contrasena='$contrasena'");
+$sql = pg_query($con, "SELECT * FROM usuarios WHERE Correo='$correo' AND Contrasena='$contrasena'");
 
-if (mysqli_num_rows($sql) != 0) {
+if (pg_affected_rows($sql) != 0) {
     echo ("sesion iniciada");
     iniciarSesion($sql);
     header("Location:../index.php");
